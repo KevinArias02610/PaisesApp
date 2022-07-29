@@ -14,6 +14,12 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
     PorRegionComponent,
     VerPaisComponent
   ],
+  exports:[
+    PorCapitalComponent,
+    PorPaisComponent,
+    PorRegionComponent,
+    VerPaisComponent
+  ],
   imports: [
     CommonModule
   ]
