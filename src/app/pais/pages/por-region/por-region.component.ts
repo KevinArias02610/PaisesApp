@@ -10,7 +10,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class PorRegionComponent {
 
-  public regiones: string[] = ['EU','EFTA','PA','AU','USAN','EEU','AL','ASEAN','CAIS','CEFTA','NAFTA','SAARC'];
+  public regiones: string[] = ['europe','americas','africa','asia','oceania'];
   public regionActiva: string = '';
   public paises: Country2[] = [];
   public hayError: boolean = false;
@@ -24,16 +24,15 @@ export class PorRegionComponent {
   ) { }
 
   activarRegion(region: string){
-    if(region === this.regionActiva){
-      return;
-    }
     this.regionActiva = region;
     this.hayError = false
     this.paisService.buscarRegion(region).subscribe((res)=>{
-      this.paises = res;
+      this.paises = res
+      console.log(res)
     },(err)=>{
       this.hayError = true;
       this.paises = [];
     })
   }
+
 }
