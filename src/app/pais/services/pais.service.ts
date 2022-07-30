@@ -21,14 +21,13 @@ export class PaisService {
 
   get httpParams2(){
     return new HttpParams().set(
-      'fields', 'name,capital,alpha2Code,flags,population'
+      'fields', 'name,capital,cca2,flags,population'
     );
   }
 
   constructor(private htpp: HttpClient) { }
 
   buscarPais(termino: string): Observable<Country[]>{
-    debugger
     const url = `${this.apiUrl}/name/${termino}`;
     return this.htpp.get<Country[]>(url, { params: this.httpParams2});
   }

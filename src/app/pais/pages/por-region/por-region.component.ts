@@ -16,7 +16,7 @@ export class PorRegionComponent {
   public hayError: boolean = false;
 
   getClase(region: string){
-    return (region === this.regionActiva) ? 'btn btn-primary' : 'btn btn-outline-primary'
+    return (region === this.regionActiva) ? 'btn btn-secondary' : 'btn btn-outline-secondary'
   }
 
   constructor(
